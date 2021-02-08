@@ -18,8 +18,3 @@ $ yarn dev:start
 | /api          | GET     | | Returns that server is working |
 | /urls         | POST    | {"newUrl": "http://wiseup.com"} | Insert and return a shorten URL|
 | /:shorted_url | GET     | | Returns the saved URL          |
-
-
-### Body
-
-
