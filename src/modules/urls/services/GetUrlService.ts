@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import { isAfter } from 'date-fns';
+import { isBefore } from 'date-fns';
 import { inject, injectable } from 'tsyringe';
 
 import Url from '../infra/typeorm/entities/Url';
@@ -25,7 +25,7 @@ class GetUrlService {
 
     const currentDate = new Date(Date.now());
 
-    if (isAfter(url.expires_in, currentDate)) {
+    if (isBefore(url.expires_in, currentDate)) {
       throw new AppError('The Url is expired', 400);
     }
 

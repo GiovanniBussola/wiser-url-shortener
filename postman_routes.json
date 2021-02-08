@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "82a42097-9bb3-4fae-9aad-c55b5aa4d931",
+		"name": "Wiser Url Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api default route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Get url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Insert shorten url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"newUrl\": \"http://wiseuponline2.com.br\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/urls",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"urls"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
