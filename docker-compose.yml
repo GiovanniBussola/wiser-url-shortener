@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  database:
+    container_name: url_shortener_db
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: url_shortener_db
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
