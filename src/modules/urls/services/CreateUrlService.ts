@@ -22,7 +22,7 @@ class CreateUrlService {
     const insertedUrl = await this.urlsRepository.create({
       url,
       shorted_url: shortedUrl,
-      expires_in: addDays(new Date(), 90),
+      expires_in: addDays(new Date(Date.now()), 90),
     });
 
     return insertedUrl;
