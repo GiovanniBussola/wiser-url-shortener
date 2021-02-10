@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Wiser Url Shortener API",
+    "description": "Projeto de encurtar URL's",
+    "version": "v1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost:3333",
+      "description": "Host de desenvolvimento"
+    }
+  ],
+  "paths": {
+    "/urls": {
+      "post": {
+        "summary": "Fazer login na api (gerar token de acesso)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["newUrl"],
+                "properties": {
+                  "newUrl": {
+                    "description": "Endereço do site (url)",
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "example": {
+                  "newUrl": "https://wisereducacao.com/"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Returns inserted url object"
+          },
+          "400": {
+            "description": "Incorrect request data"
+          },
+          "500": {
+            "description": "Unexpected error ocurred"
+          }
+        }
+      }
+    },
+    "/{shorted_url}": {
+      "get": {
+        "summary": "Buscar URL pelo código",
+        "parameters": [
+          {
+            "name": "shorted_url",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns saved url"
+          },
+          "404": {
+            "description": "Returns that url does not exists"
+          },
+          "500": {
+            "description": "Returns that unexpected error ocurred"
+          }
+        }
+      }
+    }
+  }
+}
